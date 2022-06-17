@@ -15,25 +15,18 @@ export default function calcimc() {
   const [altura, setAltura] = useState(null);
   const [resultadoImc, setResultadoImc] = useState(null);
 
-  console.log('peso ' , peso)
-  console.log('altura ', altura)
-  console.log('resultado ', resultadoImc)
-  
-  
-  // const calcularImc(){}l
-
+//--- Regra de Negocio ---
   const calcularImc=()=>{
-  
+   // const calcularImc(){}l
   if(peso==0 || !peso){
       alert('Informe o Peso')
       return
-    }
-    
+    }    
+
     if(altura==0 || !altura){
       alert('Informe a altura')
       return
-    }
-    
+    }    
     
     // fórmula
     // imc = peso/(altura * altura)
@@ -42,23 +35,26 @@ export default function calcimc() {
     const imc = peso/(altura * altura)
     setResultadoImc(imc.toFixed(1))
 
+    //--- informações ---
     console.log('imc', imc)
     console.log('peso ' , peso)
     console.log('altura ', altura)
-    console.log('resultado ', resultadoImc)
-  
+    console.log('resultado ', resultadoImc)  
   }
-
 
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.view}>
-        <Text>Calculadora de Indice de Massa Corporal IMC </Text>
+{/* --- Titulo --- */}
+      <View >        
+        <Text style={styles.title}>
+          Indice de Massa Corporal  
+        </Text>
       </View>
 
-      <View style={styles.view}>
-        <Text>Informe seu Peso</Text>
+{/* --- Input Peso --- */}
+      <View style={styles.view}> 
+        <Text style={styles.text}>Informe seu Peso</Text>
         <TextInput
           style={styles.textInput}
           autoFocus={true}
@@ -66,11 +62,14 @@ export default function calcimc() {
           // onChange={(text) => setPeso(text)}
           onChangeText={setPeso}
           value={peso}
+          placeholder='ex.: 85'
+          placeholderTextColor={'#aaa'}
         ></TextInput>
       </View>
 
+{/* --- Input Altura --- */}
       <View style={styles.view}>
-        <Text>Informe sua Altura</Text>
+        <Text style={styles.text} >Informe sua Altura</Text>
         <TextInput
           style={styles.textInput}
           autoFocus={false}
@@ -78,6 +77,8 @@ export default function calcimc() {
           // onChange={(text) => setAltura(text)}
           onChangeText={setAltura}
           value={altura}
+          placeholder='ex.: 1.80'
+          placeholderTextColor={'#aaa'}
         ></TextInput>
       </View>
 
@@ -91,11 +92,15 @@ export default function calcimc() {
         </TouchableHighlight>
       </View>
 
-
+{/* --- Resultado --- */}
     <View style={styles.view} >
-      <Text>Resultado: {resultadoImc}</Text>
+      <Text style={styles.text} >Resultado: {resultadoImc}</Text>
     </View>
 
+{/* --- Footer --- */}
+    <View>
+      <Text style={styles.desenvolvedor}>Desenvolvido por Márcio Ramos Medeiros!</Text>
+    </View>
 
     </SafeAreaView>
   );
@@ -105,7 +110,28 @@ export default function calcimc() {
 // --- Estilos ---
 const styles = StyleSheet.create({
   container: {
+    flex:1,
+    // alignItems:'center',
+    // justifyContent:'space-around',
     padding: 10,
+    backgroundColor:'#ddd'
+  },
+  title:{
+    marginTop: 16,
+    marginBottom: 16,
+    paddingVertical: 8,
+    border:0,
+    borderRadius: 6,
+    backgroundColor: "#048",
+    color: "#fff",
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "300"
+  },
+
+  text:{
+    color:'#000',
+    fontWeight:'600',
   },
 
   textInput: {
@@ -113,7 +139,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#000",
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 10,    
   },
 
   view: {
@@ -126,13 +152,19 @@ const styles = StyleSheet.create({
     alignItems:'center',
     padding:10,
     borderRadius:20,
-
   },
 
   btnTexto:{
     fontSize:15,
     textTransform:'uppercase',
     color:'#fff',
+  },
 
+  desenvolvedor:{
+    color:'#000',
+    fontWeight:'600',
+    textAlign:'center',
   },
 });
+
+
