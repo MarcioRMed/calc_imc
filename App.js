@@ -11,9 +11,9 @@ import {
 
 export default function calcimc() {
 
-  const [peso, setPeso] = useState(0);
-  const [altura, setAltura] = useState(0);
-  const [resultadoImc, setResultadoImc] = useState(0);
+  const [peso, setPeso] = useState(null);
+  const [altura, setAltura] = useState(null);
+  const [resultadoImc, setResultadoImc] = useState(null);
 
   console.log('peso ' , peso)
   console.log('altura ', altura)
@@ -38,11 +38,9 @@ export default function calcimc() {
     // fórmula
     // imc = peso/(altura * altura)
     
-    // const imc = peso/(Math.pow(altura,2))
-    // setResultadoImc(imc.toFixed(1))
-  
+    // const imc = peso/(Math.pow(altura,2))    
     const imc = peso/(altura * altura)
-    setResultadoImc(imc)
+    setResultadoImc(imc.toFixed(1))
 
     console.log('imc', imc)
     console.log('peso ' , peso)
@@ -65,17 +63,21 @@ export default function calcimc() {
           style={styles.textInput}
           autoFocus={true}
           keyboardType={"numeric"}
-          onChange={(text) => setPeso(text)}
+          // onChange={(text) => setPeso(text)}
+          onChangeText={setPeso}
+          value={peso}
         ></TextInput>
       </View>
 
       <View style={styles.view}>
-        <Text>Informe seu Peso</Text>
+        <Text>Informe sua Altura</Text>
         <TextInput
           style={styles.textInput}
           autoFocus={false}
           keyboardType={"numeric"}
-          onChange={(text) => setAltura(text)}
+          // onChange={(text) => setAltura(text)}
+          onChangeText={setAltura}
+          value={altura}
         ></TextInput>
       </View>
 
