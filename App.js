@@ -33,6 +33,12 @@ export default function calcimc() {
       return
     }    
     
+    // criar lógica para verificar o uso de virgula indevido
+    // if(altura ==  altura + ','){
+    //   alert('Por favor usar ponto " . " em vez de virugla " , "')
+    // }
+    
+    
     // fórmula
     // imc = peso/(altura * altura)
     
@@ -52,13 +58,13 @@ export default function calcimc() {
 
     <Title/>
 
-    <Peso  Peso={setPeso} />
+    <Peso Peso={setPeso} />
 
-    <Altura  Altura={setAltura} />
+    <Altura Altura={setAltura} />
 
-    <Botao     aoClicar={calcularImc} />
+    <Botao aoClicar={calcularImc} />
                     
-    <Result  resultado={resultadoImc}  />
+    <Result resultado={resultadoImc}  />
    
     <TabelaImc/>
 
@@ -73,8 +79,7 @@ export default function calcimc() {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    //  alignItems:'center',
-     justifyContent:'space-around',
+    justifyContent:'space-around',
     padding: 10,
     backgroundColor:'#ddd'
   },

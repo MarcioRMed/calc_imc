@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   text:{
     color:'#fff',
-    fontWeight:'600',
+ 
     backgroundColor: "#048",
     paddingVertical:10,
     paddingLeft:10,

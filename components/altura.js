@@ -14,19 +14,11 @@ export default props=>{
       keyboardType={"numeric"}
 
       onChangeText={(text) => props.Altura(text)}
-    
-     
-      
-      // onChangeText={setAltura}
-      // value={altura}
-      
-      
+                 
       placeholder='ex.: 1.80'
       placeholderTextColor={'#999'}
     ></TextInput>
   </View>
-
-  
  
  );
 };
