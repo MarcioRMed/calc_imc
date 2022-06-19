@@ -7,7 +7,14 @@ import {
   TouchableHighlight,
   TextInput,
   ViewBase,
+  Image,
 } from "react-native";
+
+
+
+
+const bg1 = require('./assets/tabela_imc.jpg') 
+
 
 export default function calcimc() {
 
@@ -97,9 +104,21 @@ export default function calcimc() {
       <Text style={styles.text} >Resultado: {resultadoImc}</Text>
     </View>
 
+
+{/* --- Tabela IMC --- */}
+    <View style={styles.tabelaContainer}> 
+    <Image 
+      source={bg1}
+      resizeMode="contain" 
+      style={styles.tabela}>
+         
+    </Image>
+    </View>
+
+
 {/* --- Footer --- */}
-    <View>
-      <Text style={styles.desenvolvedor}>Desenvolvido por Márcio Ramos Medeiros!</Text>
+    <View >
+      <Text style={styles.desenvolvedor}>Márcio Ramos Medeiros - 2022</Text>
     </View>
 
     </SafeAreaView>
@@ -107,7 +126,7 @@ export default function calcimc() {
 }
 
 
-// --- Estilos ---
+// --- Estilos ------------------------------------
 const styles = StyleSheet.create({
   container: {
     flex:1,
@@ -161,10 +180,25 @@ const styles = StyleSheet.create({
   },
 
   desenvolvedor:{
+    padding:10,
     color:'#000',
     fontWeight:'600',
     textAlign:'center',
   },
+  tabelaContainer:{
+    width:'100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+
+  tabela:{
+    width:'100%',
+    height:250,
+    resizeMode:'contain',
+    margin:10,
+
+  }
 });
 
 
