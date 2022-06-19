@@ -1,16 +1,28 @@
 import React, { useState } from "react";
-import {SafeAreaView, StyleSheet,   
+import { 
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+    
 } from "react-native";
 // ----------------------------------------
 
 //--- components ---
-import Footer from './components/footer'
 import TabelaImc from './components/tabelaImc'
+
+import Footer from './components/footer'
+
+// import Peso from './components/peso'
+
 import Title from './components/title'
-import Peso from './components/peso'
-import Altura from './components/altura'
-import Result from './components/result'
+
 import Botao from './components/botao'
+
+import Result from './components/result'
+
+
 
 
 // ------------------------------
@@ -50,15 +62,44 @@ export default function calcimc() {
   return (
     <SafeAreaView style={styles.container}>
 
-    <Title/>
+{/* --- Titulo --- */}
+        <Title/>
 
-    <Peso  Peso={setPeso} />
 
-    <Altura  Altura={setAltura} />
+{/* Input Peso */}
+      
+      {/* <Peso/> */}
 
-    <Botao     aoClicar={calcularImc} />
-                    
-    <Result  resultado={resultadoImc}  />
+  
+
+{/* --- Input Altura --- */}
+      <View style={styles.view}>
+        <Text style={styles.text} >Informe sua Altura</Text>
+        <TextInput
+          style={styles.textInput}
+          autoFocus={false}
+          keyboardType={"numeric"}
+          // onChange={(text) => setAltura(text)}
+          onChangeText={setAltura}
+          value={altura}
+          placeholder='ex.: 1.80'
+          placeholderTextColor={'#999'}
+        ></TextInput>
+      </View>
+
+{/* --- Botão ---  */}
+     
+
+      <Botao/>
+
+{/* --- Resultado --- */}
+   
+   
+{/* <Result/> */}
+
+
+
+
    
     <TabelaImc/>
 
@@ -73,10 +114,27 @@ export default function calcimc() {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    //  alignItems:'center',
-     justifyContent:'space-around',
+    // alignItems:'center',
+    // justifyContent:'space-around',
     padding: 10,
     backgroundColor:'#ddd'
+  },
+
+  text:{
+    color:'#000',
+    fontWeight:'600',
+  },
+
+  textInput: {
+    width: "100%",
+    borderWidth: 1,
+    borderColor: "#000",
+    padding: 10,
+    borderRadius: 10,    
+  },
+
+  view: {
+    marginBottom: 20,
   },
  
 });

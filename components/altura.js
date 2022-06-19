@@ -5,26 +5,28 @@ import { StyleSheet, Text, View, TextInput } from "react-native";
 
 export default props=>{
   return ( 
-  
+        
     <View style={styles.view}>
-    <Text style={styles.text}>Informe seu Peso</Text>
+    <Text style={styles.text} >Informe sua Altura</Text>
     <TextInput
       style={styles.textInput}
-      autoFocus={true}
+      autoFocus={false}
       keyboardType={"numeric"}
 
-      // onChangeText={(text) => setPeso(text)}
-      onChangeText={(text) => props.Peso(text)}
+      onChangeText={(text) => props.Altura(text)}
+    
+     
       
-
-      //funcionando 
-      // onChangeText={setPeso}
-      // value={peso}
+      // onChangeText={setAltura}
+      // value={altura}
       
-      placeholder="ex.: 85"
-      placeholderTextColor={"#999"}
+      
+      placeholder='ex.: 1.80'
+      placeholderTextColor={'#999'}
     ></TextInput>
-  </View> 
+  </View>
+
+  
  
  );
 };
@@ -52,5 +54,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  
 });

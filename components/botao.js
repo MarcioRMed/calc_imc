@@ -1,38 +1,53 @@
-import React from 'react';
-import {StyleSheet, View, Text,  TouchableHighlight, } from 'react-native';
+import React from "react";
+import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 
-
-export default function botao(){
+export default (props) => {
   return (
-    
     <View style={styles.view}>
-    <TouchableHighlight
-    style={styles.btnCalcular}
-    onPress={()=> calcularImc()}
-    >
-      <Text style={styles.btnTexto}>Calcular IMC</Text>
-    </TouchableHighlight>
-  </View>
-        
+      <TouchableHighlight
+        style={styles.btnCalcular}
+        // onPress={()=> calcularImc()}
+        onPress={() => props.aoClicar()}
+      >
+        <Text style={styles.btnTexto}>Calcular</Text>
+      </TouchableHighlight>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
- 
   view: {
     marginBottom: 20,
-  },
-  btnCalcular:{
-    backgroundColor:'#048',
+    width:'100%',
     justifyContent:'center',
-    alignItems:'center',
-    padding:10,
-    borderRadius:20,
-  },
-  btnTexto:{
-    fontSize:15,
-    textTransform:'uppercase',
-    color:'#fff',
+    alignItems: 'center',
   },
 
-})
+  btnCalcular: {
+    backgroundColor: "#048",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 15,
+    borderRadius: 20,  
+ 
+ 
+  },
+
+
+
+
+  
+  btnTexto: {
+    fontSize: 15,
+    textTransform: "uppercase",
+    color: "#fff",
+    fontWeight:'600',
+  
+   
+  
+  },
+
+
+
+
+});
