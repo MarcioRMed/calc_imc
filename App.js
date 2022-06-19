@@ -4,18 +4,28 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableHighlight,
   TextInput,
-  ViewBase,
-  Image,
+    
 } from "react-native";
+// ----------------------------------------
+
+//--- components ---
+import TabelaImc from './components/tabelaImc'
+
+import Footer from './components/footer'
+
+// import Peso from './components/peso'
+
+import Title from './components/title'
+
+import Botao from './components/botao'
+
+import Result from './components/result'
 
 
 
 
-const bg1 = require('./assets/tabela_imc.jpg') 
-
-
+// ------------------------------
 export default function calcimc() {
 
   const [peso, setPeso] = useState(null);
@@ -49,30 +59,17 @@ export default function calcimc() {
     console.log('resultado ', resultadoImc)  
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
-{/* --- Titulo --- */}
-      <View >        
-        <Text style={styles.title}>
-          Indice de Massa Corporal  
-        </Text>
-      </View>
 
-{/* --- Input Peso --- */}
-      <View style={styles.view}> 
-        <Text style={styles.text}>Informe seu Peso</Text>
-        <TextInput
-          style={styles.textInput}
-          autoFocus={true}
-          keyboardType={"numeric"}
-          // onChange={(text) => setPeso(text)}
-          onChangeText={setPeso}
-          value={peso}
-          placeholder='ex.: 85'
-          placeholderTextColor={'#999'}
-        ></TextInput>
-      </View>
+{/* --- Titulo --- */}
+        <Title/>
+
+
+{/* Input Peso */}
+      {/* <Peso/> */}
+
+  
 
 {/* --- Input Altura --- */}
       <View style={styles.view}>
@@ -90,36 +87,22 @@ export default function calcimc() {
       </View>
 
 {/* --- Botão ---  */}
-      <View style={styles.view}>
-        <TouchableHighlight
-        style={styles.btnCalcular}
-        onPress={()=> calcularImc()}
-        >
-          <Text style={styles.btnTexto}>Calcular IMC</Text>
-        </TouchableHighlight>
-      </View>
+     
+
+      <Botao/>
 
 {/* --- Resultado --- */}
-    <View style={styles.view} >
-      <Text style={styles.text} >Resultado: {resultadoImc}</Text>
-    </View>
+   
+   
+{/* <Result/> */}
 
 
-{/* --- Tabela IMC --- */}
-    <View style={styles.tabelaContainer}> 
-    <Image 
-      source={bg1}
-      resizeMode="contain" 
-      style={styles.tabela}>
-         
-    </Image>
-    </View>
 
 
-{/* --- Footer --- */}
-    <View >
-      <Text style={styles.desenvolvedor}>Márcio Ramos Medeiros - 2022</Text>
-    </View>
+   
+    <TabelaImc/>
+
+    <Footer/>
 
     </SafeAreaView>
   );
@@ -134,18 +117,6 @@ const styles = StyleSheet.create({
     // justifyContent:'space-around',
     padding: 10,
     backgroundColor:'#ddd'
-  },
-  title:{
-    marginTop: 16,
-    marginBottom: 16,
-    paddingVertical: 8,
-    border:0,
-    borderRadius: 6,
-    backgroundColor: "#048",
-    color: "#fff",
-    textAlign: "center",
-    fontSize: 20,
-    fontWeight: "300"
   },
 
   text:{
@@ -164,41 +135,7 @@ const styles = StyleSheet.create({
   view: {
     marginBottom: 20,
   },
-
-  btnCalcular:{
-    backgroundColor:'#048',
-    justifyContent:'center',
-    alignItems:'center',
-    padding:10,
-    borderRadius:20,
-  },
-
-  btnTexto:{
-    fontSize:15,
-    textTransform:'uppercase',
-    color:'#fff',
-  },
-
-  desenvolvedor:{
-    padding:10,
-    color:'#000',
-    fontWeight:'600',
-    textAlign:'center',
-  },
-  tabelaContainer:{
-    width:'100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-  },
-
-  tabela:{
-    width:'100%',
-    height:250,
-    resizeMode:'contain',
-    margin:10,
-
-  }
+ 
 });
 
 
