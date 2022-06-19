@@ -63,7 +63,7 @@ export default function calcimc() {
           onChangeText={setPeso}
           value={peso}
           placeholder='ex.: 85'
-          placeholderTextColor={'#aaa'}
+          placeholderTextColor={'#999'}
         ></TextInput>
       </View>
 
@@ -78,7 +78,7 @@ export default function calcimc() {
           onChangeText={setAltura}
           value={altura}
           placeholder='ex.: 1.80'
-          placeholderTextColor={'#aaa'}
+          placeholderTextColor={'#999'}
         ></TextInput>
       </View>
 
@@ -168,3 +168,7 @@ const styles = StyleSheet.create({
 });
 
 
+// cores alternativas
+
+// backgroundColor:'#048',
+// backgroundColor:'#299'
