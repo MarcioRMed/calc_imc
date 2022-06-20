@@ -26,9 +26,12 @@ Esse projeto está sob MIT license. Veja [LICENSE](https://github.com/belapferre
 
 <br>
 
+<h3 align="center"> Imagem do App </h3> 
 
+<br>
+<div style="text-align:center">
  <img src="./App_Image.jpg" width='50%' alt="imagem do app"/>
-
+</div>
 
 ---
 <h3 align="center">
