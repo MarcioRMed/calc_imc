@@ -24,7 +24,14 @@ Esse projeto foi desenvolvido utilizando:
 ### License
 Esse projeto está sob MIT license. Veja [LICENSE](https://github.com/belapferreira/conceitos-react-native/blob/master/LICENSE) para mais informações.
 
+<br>
+
+
+ <img src="./App_Image.jpg" width='50%' alt="imagem do app"/>
+
+
 ---
 <h3 align="center">
  Feito por Márcio Ramos Medeiros - 2022
  </h3>
+
