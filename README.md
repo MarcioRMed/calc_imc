@@ -1,5 +1,5 @@
 <h1 align="center"> 
-  Aplicativo de Cálculo de Indice de massa corporal IMC
+  Aplicativo - Cálculo de Indice de massa corporal - IMC
 </h1>
 
 <h3 align="center">
@@ -29,9 +29,9 @@ Esse projeto está sob MIT license. Veja [LICENSE](https://github.com/belapferre
 <h3 align="center"> Imagem do App </h3> 
 
 <br>
-<div style="text-align:center">
+<p style="text-align:center">
  <img src="./App_Image.jpg" width='50%' alt="imagem do app"/>
-</div>
+</p>
 
 ---
 <h3 align="center">
