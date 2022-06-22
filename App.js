@@ -33,10 +33,11 @@ export default function calcimc() {
       return
     }    
     
-    // criar lógica para verificar o uso de virgula indevido
-    // if(altura ==  altura + ','){
-    //   alert('Por favor usar ponto " . " em vez de virugla " , "')
-    // }
+    // lógica para verificar o uso de virgula indevida
+     if(altura.charAt(1) === ','){
+       alert('Por favor usar PONTO " . " em vez de VIRGULA " , " no campo Altura')
+       return
+     }
     
     
     // fórmula
